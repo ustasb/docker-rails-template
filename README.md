@@ -11,10 +11,18 @@ It runs the application as the `app` user. The database owner is the
 `myapp_user`. To customize this template, grep for `myapp` and replace all
 occurrences.
 
+## Preparing the Environment
+
+First, decide which environment you wish to use. Make a symbolic link called
+`.env` to the `.env.*` template you wish to use. For example:
+
+    ln -s .env.development .env
+
+Be sure to define any of the environment variables without values.
+
 ## Running
 
-The template uses [Docker Compose](https://docs.docker.com/compose/) for linking
-containers.
+[Docker Compose](https://docs.docker.com/compose/) is used for linking containers.
 
 First, build the included Dockerfiles:
 
