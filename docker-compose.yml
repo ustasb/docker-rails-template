@@ -1,0 +1,14 @@
+db:
+  build: db/
+  ports:
+    - "5432"
+web:
+  build: .
+  env_file:
+    - .env
+  volumes:
+    - .:/home/app/myapp
+  ports:
+    - "80:80"
+  links:
+    - db
