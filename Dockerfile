@@ -7,18 +7,8 @@ ENV HOME /root
 # Use baseimage-docker's init process.
 CMD ["/sbin/my_init"]
 
-# Remove the default Nginx site.
-RUN rm /etc/nginx/sites-enabled/default
-
-# Add the Nginx site and config.
-ADD nginx.conf /etc/nginx/sites-enabled/myapp.conf
-ADD rails-env.conf /etc/nginx/main.d/rails-env.conf
-
-# Start Nginx and Passenger.
-RUN rm -f /etc/service/nginx/down
-
-# Expose the Nginx HTTP service.
-EXPOSE 80
+# Map the UID 1000 from the Boot2Docker VM to the 'app' user.
+RUN usermod -u 1000 app
 
 # Install gems
 WORKDIR /tmp
@@ -26,8 +16,20 @@ ADD Gemfile /tmp/
 ADD Gemfile.lock /tmp/
 RUN bundle install
 
-# Map the UID 1000 from the boot2docker VM to the app user
-RUN usermod -u 1000 app
+# Remove the default Nginx site.
+RUN rm /etc/nginx/sites-enabled/default
+
+# Add the Nginx config.
+ADD nginx.conf /etc/nginx/sites-enabled/myapp.conf
+# Tell Nginx which environment variables to preserve. By default, it clears all
+# except for TZ for its child processes.
+ADD rails-env.conf /etc/nginx/main.d/rails-env.conf
+
+# Start Nginx and Passenger.
+RUN rm -f /etc/service/nginx/down
+
+# Expose the Nginx HTTP service.
+EXPOSE 80
 
 WORKDIR /home/app/myapp
 
