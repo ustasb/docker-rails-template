@@ -40,3 +40,10 @@ Further commands can be executed in this way.
 
 The app is exposed on port 80 by default. If using Boot2Docker, enter its IP
 address in your browser.
+
+## Production
+
+Be sure to create:
+
+- `SECRET_BASE_KEY` via `bin/rake secret`
+- `myapp_prod_user` with a password for `MYAPP_PROD_USER_DATABASE_PASSWORD`
