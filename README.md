@@ -1,6 +1,6 @@
 # Docker Rails Template
 
-This is a basic Rails app template for beginning development with Docker.
+This is my basic Rails app template for beginning development with Docker.
 
 Docker images used:
 
@@ -38,8 +38,18 @@ Finally, create the database:
 
 Further commands can be executed in this way.
 
-The app is exposed on port 80 by default. If using Boot2Docker, enter its IP
+The app is exposed on port 80 by default. If using
+[Boot2Docker](https://github.com/boot2docker/boot2docker), enter its IP
 address in your browser.
+
+## Testing
+
+For TDD, this template includes the following:
+
+- [rspec-rails](https://github.com/rspec/rspec-rails)
+- [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
+- [shoulda](https://github.com/thoughtbot/shoulda)
+- [faker](https://github.com/stympy/faker)
 
 ## Production
 
