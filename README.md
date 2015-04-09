@@ -57,3 +57,20 @@ Be sure to create:
 
 - `SECRET_BASE_KEY` via `bin/rake secret`
 - `myapp_prod_user` with a password for `MYAPP_PROD_USER_DATABASE_PASSWORD`
+
+## Tips
+
+`docker-compose up` will create a Docker 'web' container named `<base-directory-name>_web_1`.
+
+The following Bash function:
+
+    # ddo -> 'docker-do'
+    function ddo { docker exec -it `basename $PWD`_web_1 $* }
+
+allows:
+
+    # Create the database
+    ddo bin/rake db:create
+
+    # Run specs
+    ddo bin/rspec
