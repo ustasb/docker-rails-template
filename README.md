@@ -74,3 +74,6 @@ allows:
 
     # Run specs
     ddo bin/rspec
+
+    # SSH into the 'web' container
+    ddo bash -l
