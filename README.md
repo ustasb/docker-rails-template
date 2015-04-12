@@ -20,6 +20,9 @@ file into `.env`. For example:
 
 Be sure to define any of the environment variables without values.
 
+Any added environment variables must also be added to `rails-env.conf` so that
+they're exposed to Nginx child processes ([more info](https://github.com/phusion/passenger-docker#setting-environment-variables-in-nginx)).
+
 ## Running
 
 [Docker Compose](https://docs.docker.com/compose/) is used for linking containers.
