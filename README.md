@@ -13,10 +13,10 @@ occurrences.
 
 ## Preparing the Environment
 
-First, decide which environment you wish to use. Make a symbolic link called
-`.env` to the `.env.*` template you wish to use. For example:
+First, decide which environment you wish to use. Copy the selected environment
+file into `.env`. For example:
 
-    ln -s .env.development .env
+    cp .env.development .env
 
 Be sure to define any of the environment variables without values.
 
