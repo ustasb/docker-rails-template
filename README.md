@@ -45,6 +45,14 @@ The app is exposed on port 80 by default. If using
 [Boot2Docker](https://github.com/boot2docker/boot2docker), enter its IP
 address in your browser.
 
+## Sidekiq
+
+This template uses [Sidekiq](https://github.com/mperham/sidekiq) for background
+processing. A Redis container is linked to enable Sidekiq to work. Once the app
+is started, Sidekiq provides a monitoring tool at `/sidekiq`.
+
+To start Sidekiq and process jobs: `bundle exec sidekiq`
+
 ## Testing
 
 For TDD, this template includes the following:
@@ -68,7 +76,7 @@ Be sure to create:
 The following Bash function:
 
     # ddo -> 'docker-do'
-    function ddo { docker exec -it `basename $PWD`_web_1 $* }
+    function ddo { docker exec -it `basename $PWD | sed s/[-_]//g`_web_1 $* }
 
 allows:
 
