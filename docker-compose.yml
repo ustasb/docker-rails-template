@@ -2,6 +2,11 @@ db:
   build: db/
   ports:
     - "5432"
+redis:
+  image: 'redis:3.0.0'
+  command: redis-server --appendonly yes  # Start with persistent storage.
+  ports:
+    - "6379"
 web:
   build: .
   env_file:
@@ -12,3 +17,4 @@ web:
     - "80:80"
   links:
     - db
+    - redis

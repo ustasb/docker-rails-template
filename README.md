@@ -6,6 +6,7 @@ Docker images used:
 
 - [passenger-docker](https://github.com/phusion/passenger-docker)
 - [postgres](https://registry.hub.docker.com/_/postgres/)
+- [redis](https://registry.hub.docker.com/_/redis/)
 
 It runs the application as the `app` user. The database owner is the
 `myapp_user`. To customize this template, grep for `myapp` and replace all
