@@ -55,7 +55,7 @@ This template uses [Sidekiq](https://github.com/mperham/sidekiq) for background
 processing. A Redis container is linked to enable Sidekiq to work. Once the app
 is started, Sidekiq provides a monitoring tool at `/sidekiq`.
 
-To start Sidekiq and process jobs: `bundle exec sidekiq`
+To start Sidekiq and process jobs: `bin/sidekiq`
 
 ## Testing
 
