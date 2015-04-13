@@ -2,6 +2,9 @@
 
 This is my basic Rails app template for beginning development with Docker.
 
+- Rails version: 4.2.1
+- Ruby version: 2.2.0
+
 Docker images used:
 
 - [passenger-docker](https://github.com/phusion/passenger-docker)
