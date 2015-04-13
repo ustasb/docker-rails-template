@@ -90,5 +90,5 @@ allows:
     # Run specs
     ddo bin/rspec
 
-    # SSH into the 'web' container
+    # Start a Bash login shell
     ddo bash -l
