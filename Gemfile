@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # For background processing
 gem 'sidekiq'
+gem 'sidetiq'
 # Sidekiq web monitoring
 gem 'sinatra', :require => nil
 

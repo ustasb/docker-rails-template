@@ -57,6 +57,10 @@ is started, Sidekiq provides a monitoring tool at `/sidekiq`.
 
 To start Sidekiq and process jobs: `bin/sidekiq`
 
+[Sidetiq](https://github.com/tobiassvn/sidetiq) is used to create scheduled
+jobs. Scheduled jobs should go under `app/workers/scheduled/` and will be
+automatically loaded even in the development environment.
+
 ## Testing
 
 For TDD, this template includes the following:
